@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator punktów</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        function max1(...args) {
+            max = args[0]
+            for (var i in args) {
+                args[i] > max ? max = args[i] : max = max;
+            }
+            return max
+        }
+        function calc(dict) {
+            sum = 0
+            sum = max1(dict.matematyka.roz * 2., dict.matematyka.podst * 0.5) +
+                max1(dict.informatyka.roz * 1., dict.informatyka.podst * 0.5) +
+                max1(dict.matematyka.roz * 0.5, dict.matematyka.podst * 0.25,
+                    dict.informatyka.roz * 0.5, dict.informatyka.podst * 0.25,
+                    dict.fizyka.roz * 0.5, dict.fizyka.podst * 0.25, ) +
+                max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
+            return sum;
+        }
+        function Calculate() {
+            var dict1 = {
+                matematyka: {
+                    roz: 0,
+                    podst: 0
+                },
+                fizyka: {
+                    roz: 0,
+                    podst: 0
+                },
+                informatyka: {
+                    roz: 0,
+                    podst: 0
+                },
+                jezyk: {
+                    roz: 0,
+                    podst: 0
+                }
+            };
+            dict1.matematyka.podst = document.getElementById('matp').value;
+            dict1.matematyka.roz = document.getElementById('matr').value;
+            dict1.informatyka.podst = document.getElementById('infp').value;
+            dict1.informatyka.roz = document.getElementById('infr').value;
+            dict1.fizyka.podst = document.getElementById('fizp').value;
+            dict1.fizyka.roz = document.getElementById('fizr').value;
+            dict1.jezyk.podst = document.getElementById('jezp').value;
+            dict1.jezyk.roz = document.getElementById('jezr').value;
+            console.log(calc(dict1));
+            document.getElementById('answer').innerHTML = `Twój wynik to: ${calc(dict1)}`;
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div>
+            <!-- pasek nawigacyjny -->
+            <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+                <!-- Tytuł paska nawigacyjnego -->
+                <a class="navbar-brand" href="/">
+                     Kalkulator punktów
+                </a>
+
+                <!-- Guzik menu, który się pojawia po zmianie szerokości paska -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        <br/>
+
+        <table>
+        <tr>
+            <th>Przedmiot</th>
+            <th>Poziom podstawowy</th>
+            <th>Poziom rozszerzony</th>
+        </tr>
+        <tr>
+            <td>Matematyka</td>
+            <td>
+                <input type='number' min="0" max="100" id='matp' value=0  />
+            </td>
+            <td>
+                <input type='number' min="0" max="100" id='matr' value=0  />
+            </td>
+        </tr>
+        <tr>
+            <td>Informatyka</td>
+            <td>
+                <input type='number' min="0" max="100" id='infp' value=0  />
+            </td>
+            <td>
+                <input type='number' min="0" max="100" id='infr' value=0  />
+            </td>
+        </tr>
+        <tr>
+            <td>Fizyka</td>
+            <td>
+                <input type='number' min="0" max="100" id='fizp' value=0  />
+            </td>
+            <td>
+                <input type='number' min="0" max="100" id='fizr' value=0  />
+            </td>
+        </tr>
+        <tr>
+            <td>Język</td>
+            <td>
+                <input type='number' min="0" max="100" id='jezp' value=0  />
+            </td>
+            <td>
+                <input type='number' min="0" max="100" id='jezr' value=0  />
+            </td>
+        </tr>
+
+    </table>
+    <button id="count" onclick="Calculate();">Policz</button>
+    <h2 id="answer"></h2>
+    </div>
+
+
+</body>
+
+</html>
