@@ -22,12 +22,18 @@
         }
         function calc(dict) {
             sum = 0
+            if(dict.olimpiada ){
+                sum = "Po co sprawdzasz? I tak się dostaniesz."
+            }
+            else{
             sum = max1(dict.matematyka.roz * 2., dict.matematyka.podst * 0.5) +
                 max1(dict.informatyka.roz * 1., dict.informatyka.podst * 0.5) +
                 max1(dict.matematyka.roz * 0.5, dict.matematyka.podst * 0.25,
                     dict.informatyka.roz * 0.5, dict.informatyka.podst * 0.25,
                     dict.fizyka.roz * 0.5, dict.fizyka.podst * 0.25, ) +
                 max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
+            
+            }
             return sum;
         }
         function Calculate() {
@@ -47,7 +53,8 @@
                 jezyk: {
                     roz: 0,
                     podst: 0
-                }
+                },
+                olimpiada: 0,
             };
             dict1.matematyka.podst = document.getElementById('matp').value;
             dict1.matematyka.roz = document.getElementById('matr').value;
@@ -57,6 +64,8 @@
             dict1.fizyka.roz = document.getElementById('fizr').value;
             dict1.jezyk.podst = document.getElementById('jezp').value;
             dict1.jezyk.roz = document.getElementById('jezr').value;
+            dict1.olimpiada = document.getElementById('olimpiada').checked;
+            // console.log(dict1.olimpiada)
             console.log(calc(dict1));
             document.getElementById('answer').innerHTML = `Twój wynik to: ${calc(dict1)}`;
         }
@@ -140,6 +149,14 @@
 
     </table>
     <br>
+     <div class="col-auto my-1">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="olimpiada">
+        <label class="custom-control-label" for="olimpiada"><h5>Finalista olimpiady</h5> </label>
+      </div>
+    </div>
+
+    <br>
     <button id="count" type="button" class="btn btn-primary" onclick="Calculate();">Policz</button>
     <br>
     <br>
@@ -151,7 +168,7 @@
 <div class="container">
 <h3>Progi:<h3>
     <ul>
-        <li><b> 204 </b>(2017)</li>
+        <li><b>204 </b>(2017)</li>
         <li><b>150 </b>(2016)</li>
         <li><b>120 </b>(2015)</li>
     </ul>
