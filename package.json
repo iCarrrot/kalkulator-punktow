@@ -1,5 +1,5 @@
 {
-  "name": "Pogadaj-se",
+  "name": "kalkulator-punktow",
   "version": "1.0.0",
   "description": "Projekt na WEPPO",
   "main": "server.js",
@@ -9,22 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iCarrrot/Pogadaj-se.git"
+    "url": "git+https://github.com/iCarrrot/kalkulator-punktow.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iCarrrot/Pogadaj-se/issues"
+    "url": "https://github.com/iCarrrot/kalkulator-punktow/issues"
   },
-  "homepage": "https://github.com/iCarrrot/Pogadaj-se#readme",
+  "homepage": "https://github.com/iCarrrot/kalkulator-punktow#readme",
   "dependencies": {
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "express-session": "^1.15.6",
     "jquery": "^3.2.1",
     "jshint": "^2.9.5",

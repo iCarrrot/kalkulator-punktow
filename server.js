@@ -1,17 +1,17 @@
 var http = require('http');
 var express = require('express');
 var url = require('url')
-var utils = require('./utils.js');
-var db = require('./database.js');
+
+
 var https = require('https');
 var fs = require('fs');
 var multer = require('multer')
-var upload = multer({ dest: 'uploads/' })
+
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
-var socket = require('socket.io');
+
 var print = console.log
 
 var app = express();
