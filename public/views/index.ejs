@@ -65,7 +65,7 @@
 </head>
 
 <body>
-    <div class="login-page">
+    
         <div>
             <!-- pasek nawigacyjny -->
             <nav class="navbar navbar-expand-md navbar-dark bg-primary">
@@ -94,8 +94,8 @@
 
         </div>
         <br/>
-
-        <table>
+        <div class="container">
+        <table class="table table-striped">
         <tr>
             <th>Przedmiot</th>
             <th>Poziom podstawowy</th>
@@ -104,44 +104,49 @@
         <tr>
             <td>Matematyka</td>
             <td>
-                <input type='number' min="0" max="100" id='matp' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='matp' placeholder=0  />
             </td>
             <td>
-                <input type='number' min="0" max="100" id='matr' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='matr' placeholder=0  />
             </td>
         </tr>
         <tr>
             <td>Informatyka</td>
             <td>
-                <input type='number' min="0" max="100" id='infp' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='infp' placeholder=0  />
             </td>
             <td>
-                <input type='number' min="0" max="100" id='infr' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='infr' placeholder=0  />
             </td>
         </tr>
         <tr>
             <td>Fizyka</td>
             <td>
-                <input type='number' min="0" max="100" id='fizp' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='fizp' placeholder=0  />
             </td>
             <td>
-                <input type='number' min="0" max="100" id='fizr' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='fizr' placeholder=0  />
             </td>
         </tr>
         <tr>
             <td>Język</td>
             <td>
-                <input type='number' min="0" max="100" id='jezp' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='jezp' placeholder=0  />
             </td>
             <td>
-                <input type='number' min="0" max="100" id='jezr' value=0  />
+                <input class="form-control"  type='number' min="0" max="100" id='jezr' placeholder=0  />
             </td>
         </tr>
 
     </table>
-    <button id="count" onclick="Calculate();">Policz</button>
-    <h2 id="answer"></h2>
+    <br>
+    <button id="count" type="button" class="btn btn-primary" onclick="Calculate();">Policz</button>
+    <br>
+    <br>
+
+    <p class="h2"  id="answer"></p> 
     </div>
+
 
 
 </body>
