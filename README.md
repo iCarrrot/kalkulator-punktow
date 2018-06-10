@@ -1,2 +1,2 @@
 # kalkulator-punktow
-Bardzo prosty kalkulator punktów rekrutacyjnych na WMI UWr. Zapraszam do pull requestów 
+Bardzo prosty kalkulator punktów rekrutacyjnych na WMI UWr. Zapraszam do pull requestów  ;)

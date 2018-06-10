@@ -7,10 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kalkulator punktów</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <script>
         function max1(...args) {
@@ -20,22 +24,23 @@
             }
             return max
         }
+
         function calc(dict) {
             sum = 0
-            if(dict.olimpiada ){
+            if (dict.olimpiada) {
                 sum = "Po co sprawdzasz? I tak się dostaniesz."
-            }
-            else{
-            sum = max1(dict.matematyka.roz * 2., dict.matematyka.podst * 0.5) +
-                max1(dict.informatyka.roz * 1., dict.informatyka.podst * 0.5) +
-                max1(dict.matematyka.roz * 0.5, dict.matematyka.podst * 0.25,
-                    dict.informatyka.roz * 0.5, dict.informatyka.podst * 0.25,
-                    dict.fizyka.roz * 0.5, dict.fizyka.podst * 0.25, ) +
-                max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
-            
+            } else {
+                sum = max1(dict.matematyka.roz * 2., dict.matematyka.podst * 0.5) +
+                    max1(dict.informatyka.roz * 1., dict.informatyka.podst * 0.5) +
+                    max1(dict.matematyka.roz * 0.5, dict.matematyka.podst * 0.25,
+                        dict.informatyka.roz * 0.5, dict.informatyka.podst * 0.25,
+                        dict.fizyka.roz * 0.5, dict.fizyka.podst * 0.25, ) +
+                    max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
+
             }
             return sum;
         }
+
         function Calculate() {
             var dict1 = {
                 matematyka: {
@@ -74,156 +79,170 @@
 </head>
 
 <body>
-    
-        <div>
-            <!-- pasek nawigacyjny -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-                <!-- Tytuł paska nawigacyjnego -->
-                <a class="navbar-brand" href="/">
-                     Kalkulator punktów
-                </a>
 
-                <!-- Guzik menu, który się pojawia po zmianie szerokości paska -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div>
+        <!-- pasek nawigacyjny -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <!-- Tytuł paska nawigacyjnego -->
+            <a class="navbar-brand" href="/">
+                Kalkulator punktów
+            </a>
 
-                <div class="collapse navbar-collapse">
+            <!-- Guzik menu, który się pojawia po zmianie szerokości paska -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <div class="collapse navbar-collapse">
 
-        </div>
-        <br/>
-        <div class="container">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <br/>
+    <div class="container">
         <table class="table table-striped">
-        <tr>
-            <th>Przedmiot</th>
-            <th>Poziom podstawowy (%)</th>
-            <th>Poziom rozszerzony (%)</th>
-        </tr>
-        <tr>
-            <td>Matematyka</td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='matp' placeholder=0  />
-            </td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='matr' placeholder=0  />
-            </td>
-        </tr>
-        <tr>
-            <td>Informatyka</td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='infp' placeholder=0  />
-            </td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='infr' placeholder=0  />
-            </td>
-        </tr>
-        <tr>
-            <td>Fizyka</td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='fizp' placeholder=0  />
-            </td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='fizr' placeholder=0  />
-            </td>
-        </tr>
-        <tr>
-            <td>Język</td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='jezp' placeholder=0  />
-            </td>
-            <td>
-                <input class="form-control"  type='number' min="0" max="100" id='jezr' placeholder=0  />
-            </td>
-        </tr>
+            <tr>
+                <th class="col-3">Przedmiot</th>
+                <th class="col-2">Poziom podstawowy (%)</th>
+                <th class="col-2">Poziom rozszerzony (%)</th>
+            </tr>
+            <tr>
+                <td class="col-3">Matematyka</td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='matp' placeholder=0 />
+                </td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='matr' placeholder=0 />
+                </td>
+            </tr>
+            <tr>
+                <td class="col-3">Informatyka</td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='infp' placeholder=0 />
+                </td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='infr' placeholder=0 />
+                </td>
+            </tr>
+            <tr>
+                <td class="col-3">Fizyka</td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='fizp' placeholder=0 />
+                </td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='fizr' placeholder=0 />
+                </td>
+            </tr>
+            <tr>
+                <td class="col-3">Język</td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='jezp' placeholder=0 />
+                </td>
+                <td class="col-2">
+                    <input class="form-control" type='number' min="0" max="100" id='jezr' placeholder=0 />
+                </td>
+            </tr>
 
-    </table>
-    <br>
-     <div class="col-auto my-1">
-      <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="olimpiada">
-        <label class="custom-control-label" for="olimpiada"><h5>Finalista olimpiady</h5> </label>
-      </div>
+        </table>
+        <br>
+        <div class="col-auto my-1">
+            <div class="custom-control custom-checkbox mr-sm-2">
+                <input type="checkbox" class="custom-control-input" id="olimpiada">
+                <label class="custom-control-label" for="olimpiada">
+                    <h5>Finalista olimpiady</h5>
+                </label>
+            </div>
+        </div>
+
+        <br>
+        <button id="count" type="button" class="btn btn-primary" onclick="Calculate();">Policz</button>
+        <br>
+        <br>
+
+        <div  class="h2 " id="answer"> </div>
     </div>
+    <div class="jumbotron">
 
-    <br>
-    <button id="count" type="button" class="btn btn-primary" onclick="Calculate();">Policz</button>
-    <br>
-    <br>
+        <div class="container">
+            <h3>Progi:
+            </h3>
+            <ul>
+                <li>
+                    <b>204 </b>(2017)</li>
+                <li>
+                    <b>150 </b>(2016)</li>
+                <li>
+                    <b>120 </b>(2015)</li>
+            </ul>
+            <br>
+            <br>
+            <h3>Zasady liczenia punktów:</h3>
+            <table class="table table-striped">
+                <caption></caption>
+                <thead>
+                    <tr>
+                        <td scope="col">Przedmiot
+                        </td>
+                        <td scope="col">Poziom podstawowy
+                        </td>
+                        <td scope="col">Poziom rozszerzony
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">informatyka
+                        </td>
+                        <td>0,5
+                        </td>
+                        <td>1,0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">matematyka
+                        </td>
+                        <td>0,5
+                        </td>
+                        <td>2,0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">przedmiot (jeden do wyboru)
+                            <br>fizyka z astronomią, matematyka, informatyka
+                        </td>
+                        <td>0,25
+                        </td>
+                        <td>0,5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">dowolny język obcy nowożytny (pisemny)
+                        </td>
+                        <td>0,2
+                        </td>
+                        <td>0,4
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <p class="h2"  id="answer"></p> 
-    </div>
-        <div class="jumbotron">
-        
-<div class="container">
-<h3>Progi:<h3>
-    <ul>
-        <li><b>204 </b>(2017)</li>
-        <li><b>150 </b>(2016)</li>
-        <li><b>120 </b>(2015)</li>
-    </ul>
-    <br>
-    <br>
-    <h3>Zasady liczenia punktów:</h3>  
-    <table class="table table-striped">
-       <tr>
-            <td>przedmiot
-            </td>
-            <td>Poziom podstawowy
-            </td>
-            <td>Poziom rozszerzony
-            </td>
-        </tr>
-        <tr>
-            <td>informatyka
-            </td>
-            <td>0,5
-            </td>
-            <td>1,0
-            </td>
-        </tr>
-        <tr>
-            <td>matematyka
-            </td>
-            <td>0,5
-            </td>
-            <td>2,0
-            </td>
-        </tr>
-        <tr>
-            <td>przedmiot (jeden do wyboru)<br>fizyka z astronomią, matematyka, informatyka
-            </td>
-            <td>0,25
-            </td>
-            <td>0,5
-            </td>
-        </tr>
-        <tr>
-            <td>dowolny język obcy nowożytny (pisemny)
-            </td>
-            <td>0,2
-            </td>
-            <td>0,4
-            </td>
-        </tr>
-    </table>
 
-        
-    
-    <div>Na studia kwalifikowani są wyłącznie kandydaci, którzy uzyskali co najmniej 115 punktów rekrutacyjnych oraz co najmniej 30 procent punktów z egzaminu maturalnego z matematyki na poziomie rozszerzonym lub co najmniej 70 procent punktów z egzaminu maturalnego z matematyki na poziomie podstawowym.</dic> 
-    
-    </div>
-</div>
+
+            <div>Na studia kwalifikowani są wyłącznie kandydaci, którzy uzyskali co najmniej 115 punktów rekrutacyjnych oraz co
+                najmniej 30 procent punktów z egzaminu maturalnego z matematyki na poziomie rozszerzonym lub co najmniej
+                70 procent punktów z egzaminu maturalnego z matematyki na poziomie podstawowym.</dic>
+
+            </div>
+        </div>
 </body>
 
 </html>
