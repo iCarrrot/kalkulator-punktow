@@ -34,7 +34,7 @@
     "package.json": "^2.0.1",
     "pg": "^7.4.1",
     "popper": "^1.0.1",
-    "sequelize": "^4.32.1",
+    "sequelize": "^5.15.1",
     "sequelize-heroku": "^1.0.0",
     "session-file-store": "^1.2.0",
     "session-memory-store": "^0.2.2",
