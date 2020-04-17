@@ -22,11 +22,12 @@
             for (var i in args) {
                 args[i] > max ? max = args[i] : max = max;
             }
+            console.log(max)
             return max
         }
 
         function calc_cs(dict) {
-            sum = 0
+            var sum = 0
             if (dict.olimpiada) {
                 sum = "Po co sprawdzasz? I tak się dostaniesz."
             } else {
@@ -42,19 +43,18 @@
         }
 
         function calc_ISIM(dict) {
-            sum = 0
+            var sum_isim = 0
             if (dict.olimpiada) {
-                sum = "Po co sprawdzasz? I tak się dostaniesz."
+                sum_isim = "Po co sprawdzasz? I tak się dostaniesz."
             } else {
-                sum = dict.matematyka.roz * 2. +
+                sum_isim = dict.matematyka.roz * 2. +
                     dict.informatyka.roz * 1. +
-                    max1(dict.matematyka.roz,
-                        dict.informatyka.roz,
-                        dict.fizyka.roz) +
+                    max1(dict.matematyka.roz * 1.,
+                        dict.informatyka.roz * 1.,
+                        dict.fizyka.roz * 1.) +
                     max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
-
             }
-            return sum;
+            return sum_isim;
         }
 
         function Calculate() {
@@ -87,11 +87,14 @@
             dict1.jezyk.roz = document.getElementById('jezr').value;
             dict1.olimpiada = document.getElementById('olimpiada').checked;
 
-            var res = ""
+            var res = ''
             if (dict1.olimpiada) {
                 res = "Po co sprawdzasz? I tak się dostaniesz."
             } else {
-                res = `Twój wynik na:\n<strong>informatykę:</strong> ${calc_cs(dict1)}\n<strong>ISIM:</strong> ${calc_ISIM(dict1)}`
+                res = `
+                <strong>informatyka:</strong> ${calc_cs(dict1)}
+                <br />
+                <strong>ISIM:</strong> ${calc_ISIM(dict1)}`
             }
             
             document.getElementById('answer').innerHTML = res;
@@ -195,20 +198,43 @@
     <div class="jumbotron">
 
         <div class="container">
-            <h3>Progi:
-            </h3>
-            <ul>
-                <li>
-                    <b>264 </b>(2019)</li>
-                <li>
-                    <b>213 </b>(2018)</li>
-                <li>
-                    <b>204 </b>(2017)</li>
-                <li>
-                    <b>150 </b>(2016)</li>
-                <li>
-                    <b>120 </b>(2015)</li>
-            </ul>
+            <h3>Progi:</h3>
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr>
+                    <th scope="col">Rok</th>
+                    <th scope="col">Informatyka</th>
+                    <th scope="col">ISIM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">2019</th>
+                        <td>264</td>
+                        <td>366.8</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2018</th>
+                        <td>213</td>
+                        <td>356</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2017</th>
+                        <td>204</td>
+                        <td>291-300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2016</th>
+                        <td>150</td>
+                        <td>291-300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2015</th>
+                        <td>120</td>
+                        <td>291-300</td>
+                    </tr>
+                </tbody>
+            </table>
             <br>
             <br>
             <h3>Zasady liczenia punktów:</h3>
