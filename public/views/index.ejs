@@ -25,7 +25,7 @@
             return max
         }
 
-        function calc(dict) {
+        function calc_cs(dict) {
             sum = 0
             if (dict.olimpiada) {
                 sum = "Po co sprawdzasz? I tak się dostaniesz."
@@ -35,6 +35,22 @@
                     max1(dict.matematyka.roz * 0.5, dict.matematyka.podst * 0.25,
                         dict.informatyka.roz * 0.5, dict.informatyka.podst * 0.25,
                         dict.fizyka.roz * 0.5, dict.fizyka.podst * 0.25, ) +
+                    max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
+
+            }
+            return sum;
+        }
+
+        function calc_ISIM(dict) {
+            sum = 0
+            if (dict.olimpiada) {
+                sum = "Po co sprawdzasz? I tak się dostaniesz."
+            } else {
+                sum = dict.matematyka.roz * 2. +
+                    dict.informatyka.roz * 1. +
+                    max1(dict.matematyka.roz,
+                        dict.informatyka.roz,
+                        dict.fizyka.roz) +
                     max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
 
             }
@@ -72,7 +88,14 @@
             dict1.olimpiada = document.getElementById('olimpiada').checked;
             // console.log(dict1.olimpiada)
             console.log(calc(dict1));
-            document.getElementById('answer').innerHTML = `Twój wynik to: ${calc(dict1)}`;
+            var res = ""
+            if (dict1.olimpiada) {
+                res = "Po co sprawdzasz? I tak się dostaniesz."
+            } else {
+                res = `Twój wynik na:\n<strong>informatykę:</strong> ${calc_cs(dict1)}\n<strong>ISIM:</strong> ${calc_ISIM(dict1)}`
+            }
+            
+            document.getElementById('answer').innerHTML = res;
         }
     </script>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
