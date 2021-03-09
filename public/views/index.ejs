@@ -48,10 +48,10 @@
                 sum_isim = "Po co sprawdzasz? I tak się dostaniesz."
             } else {
                 sum_isim = dict.matematyka.roz * 2. +
-                    dict.informatyka.roz * 1. +
-                    max1(dict.matematyka.roz * 1.,
-                        dict.informatyka.roz * 1.,
-                        dict.fizyka.roz * 1.) +
+                    dict.informatyka.roz * 0.5 +
+                    max1(dict.matematyka.roz * 1.5,
+                        dict.informatyka.roz * 1.5,
+                        dict.fizyka.roz * 1.5) +
                     max1(dict.jezyk.roz * 0.4, dict.jezyk.podst * 0.2);
             }
             return sum_isim;
